@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="源文件\controls">
+      <UniqueIdentifier>{f9f36ca0-b756-490d-b3b8-5e8cd787ead2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\public">
+      <UniqueIdentifier>{ffe67705-c387-4098-8b88-5c7fa4b19f88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\public">
+      <UniqueIdentifier>{8c03f4c4-52e8-40f6-8e2b-a95a1225bb87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\main">
+      <UniqueIdentifier>{660a6a0c-1fcb-4316-88a5-87ebc55a6bda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\main">
+      <UniqueIdentifier>{c10591a1-cbce-441c-b233-9380a21cd265}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\plc">
+      <UniqueIdentifier>{7bf3aa8d-d44b-46dc-81d5-b23e8a845022}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\plc">
+      <UniqueIdentifier>{fb783f35-7043-4e49-bf93-6b94baeedbc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\controls">
+      <UniqueIdentifier>{eff73996-a21c-49ac-84dd-576789885172}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="res\Test0.rc2">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Test0.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\title界面.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\右键头.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\左箭头.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\设备名.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\版权所有.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\设备名（紫）.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\bitmap2.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\按钮（检测未按）.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\按钮（检测已按）.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\按钮（学习未按）.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\按钮（学习已按）.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\titlelong界面.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\按钮（相机已按）.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\按钮（参数已按）.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\按钮（相机未按）.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\按钮（参数未按）.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\按钮（帮助未按）.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\按钮（帮助已按）.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\ribbon1.mfcribbon-ms">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\手动模式.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\学习模式.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\手动模式不可用.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\学习模式不可用.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\手动模式小.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\学习模式小.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\DropDown .bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\DropDown.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\bitmap4.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\DropDownGray.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\DropDownDeepGray.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\DropDownDisabled.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\主界面背景.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\标题栏.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\退出按钮.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\学习按钮.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\退出按钮（亮）.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\帮助按钮（暗）.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\帮助按钮（亮）.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\参数按钮（暗）.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\参数按钮（亮）.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\测试按钮（暗）.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\测试按钮（亮）.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\公司图标.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\退出按钮（暗）.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\学习按钮（暗）.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\学习按钮（亮）.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\检测按钮（暗）.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\检测按钮（亮）.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\转移.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\沟槽学习（正常）.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\沟槽学习（禁用）.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\沟槽学习（亮）.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\沟槽学习（暗）.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\icon2.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\icon3.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\icon4.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\btn1.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\help2.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\change.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\chang.ico">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="actfx485bd1.h">
+      <Filter>头文件\plc</Filter>
+    </ClInclude>
+    <ClInclude Include="actsupport1.h">
+      <Filter>头文件\plc</Filter>
+    </ClInclude>
+    <ClInclude Include="Test0.h">
+      <Filter>头文件\main</Filter>
+    </ClInclude>
+    <ClInclude Include="Test0Dlg.h">
+      <Filter>头文件\main</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PLC.h">
+      <Filter>头文件\plc</Filter>
+    </ClInclude>
+    <ClInclude Include="PublicTool.h">
+      <Filter>头文件\public</Filter>
+    </ClInclude>
+    <ClInclude Include="BCMenu.h">
+      <Filter>头文件\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="BtnST.h">
+      <Filter>头文件\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicExcel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="PublicTool.cpp">
+      <Filter>源文件\public</Filter>
+    </ClCompile>
+    <ClCompile Include="Test0.cpp">
+      <Filter>源文件\main</Filter>
+    </ClCompile>
+    <ClCompile Include="Test0Dlg.cpp">
+      <Filter>源文件\main</Filter>
+    </ClCompile>
+    <ClCompile Include="actfx485bd1.cpp">
+      <Filter>源文件\plc</Filter>
+    </ClCompile>
+    <ClCompile Include="actsupport1.cpp">
+      <Filter>源文件\plc</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicExcel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BCMenu.cpp">
+      <Filter>源文件\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="BtnST.cpp">
+      <Filter>源文件\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="PLC.cpp">
+      <Filter>源文件\plc</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Test0.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

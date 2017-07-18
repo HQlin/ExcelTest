@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A8E25661-86A8-47CF-8099-9500B302BF84}</ProjectGuid>
+    <RootNamespace>Test0</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+    <ProjectName>MCEQVIn</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+    <GenerateManifest>true</GenerateManifest>
+    <EmbedManifest>true</EmbedManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <DataExecutionPrevention>false</DataExecutionPrevention>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="res\bitmap2.bmp" />
+    <None Include="res\bitmap4.bmp" />
+    <None Include="res\btn1.ico" />
+    <None Include="res\chang.ico" />
+    <None Include="res\change.ico" />
+    <None Include="res\DropDown .bmp" />
+    <None Include="res\DropDown.bmp" />
+    <None Include="res\DropDownDeepGray.bmp" />
+    <None Include="res\DropDownDisabled.bmp" />
+    <None Include="res\DropDownGray.bmp" />
+    <None Include="res\help2.ico" />
+    <None Include="res\icon2.ico" />
+    <None Include="res\icon3.ico" />
+    <None Include="res\icon4.ico" />
+    <None Include="res\ribbon1.mfcribbon-ms" />
+    <None Include="res\Test0.ico" />
+    <None Include="res\Test0.rc2" />
+    <None Include="res\titlelong界面.bmp" />
+    <None Include="res\title界面.bmp" />
+    <None Include="res\主界面背景.bmp" />
+    <None Include="res\公司图标.ico" />
+    <None Include="res\参数按钮（亮）.ico" />
+    <None Include="res\参数按钮（暗）.ico" />
+    <None Include="res\右键头.bmp" />
+    <None Include="res\学习按钮.ico" />
+    <None Include="res\学习按钮（亮）.ico" />
+    <None Include="res\学习按钮（暗）.ico" />
+    <None Include="res\学习模式.bmp" />
+    <None Include="res\学习模式不可用.bmp" />
+    <None Include="res\学习模式小.bmp" />
+    <None Include="res\左箭头.bmp" />
+    <None Include="res\帮助按钮（亮）.ico" />
+    <None Include="res\帮助按钮（暗）.ico" />
+    <None Include="res\手动模式.bmp" />
+    <None Include="res\手动模式不可用.bmp" />
+    <None Include="res\手动模式小.bmp" />
+    <None Include="res\按钮（参数已按）.bmp" />
+    <None Include="res\按钮（参数未按）.bmp" />
+    <None Include="res\按钮（学习已按）.bmp" />
+    <None Include="res\按钮（学习未按）.bmp" />
+    <None Include="res\按钮（帮助已按）.bmp" />
+    <None Include="res\按钮（帮助未按）.bmp" />
+    <None Include="res\按钮（检测已按）.bmp" />
+    <None Include="res\按钮（检测未按）.bmp" />
+    <None Include="res\按钮（相机已按）.bmp" />
+    <None Include="res\按钮（相机未按）.bmp" />
+    <None Include="res\标题栏.bmp" />
+    <None Include="res\检测按钮（亮）.ico" />
+    <None Include="res\检测按钮（暗）.ico" />
+    <None Include="res\沟槽学习（亮）.bmp" />
+    <None Include="res\沟槽学习（暗）.bmp" />
+    <None Include="res\沟槽学习（正常）.bmp" />
+    <None Include="res\沟槽学习（禁用）.bmp" />
+    <None Include="res\测试按钮（亮）.ico" />
+    <None Include="res\测试按钮（暗）.ico" />
+    <None Include="res\版权所有.bmp" />
+    <None Include="res\设备名.bmp" />
+    <None Include="res\设备名（紫）.bmp" />
+    <None Include="res\转移.ico" />
+    <None Include="res\退出按钮.bmp" />
+    <None Include="res\退出按钮（亮）.ico" />
+    <None Include="res\退出按钮（暗）.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="actfx485bd1.h" />
+    <ClInclude Include="actsupport1.h" />
+    <ClInclude Include="BasicExcel.h" />
+    <ClInclude Include="BCMenu.h" />
+    <ClInclude Include="BtnST.h" />
+    <ClInclude Include="PLC.h" />
+    <ClInclude Include="PublicTool.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Test0.h" />
+    <ClInclude Include="Test0Dlg.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="actfx485bd1.cpp" />
+    <ClCompile Include="actsupport1.cpp" />
+    <ClCompile Include="BasicExcel.cpp" />
+    <ClCompile Include="BCMenu.cpp" />
+    <ClCompile Include="BtnST.cpp" />
+    <ClCompile Include="PLC.cpp" />
+    <ClCompile Include="PublicTool.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Test0.cpp" />
+    <ClCompile Include="Test0Dlg.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Test0.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="Test0.rc" _x007B_5713F0A5-6F4A-11D5-9315-009099244EFD_x007D_="CActsupport1" _x007B_39B2DB55-51B4-4366-B647-852984D00615_x007D_="CActfx485bd1" _x007B_970BEB67-62CC-4260-AFAD-B6B91B0C4AA1_x007D_="CAct2ctrl1" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
