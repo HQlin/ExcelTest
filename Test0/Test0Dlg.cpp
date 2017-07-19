@@ -73,6 +73,9 @@ BOOL CTest0Dlg::OnInitDialog()
 	LoadPlc(CPublicTool::GetFilePath(L"PLC位号模板.xls"));
 	TurnNormal(&m_pBtnUpdate);
 
+	//将 APP 视窗设定成永远保持在最上层
+	::SetWindowPos(GetSafeHwnd(),HWND_TOPMOST,0,0,0,0,SWP_NOMOVE|SWP_NOSIZE);
+
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }
 
