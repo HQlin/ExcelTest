@@ -43,6 +43,7 @@ public:
 	BasicExcel e;
 	vector<const char*> m_plc;				//PLC位号   
 	vector<const wchar_t*> m_plcCStr;		//PLC功能说明
+	vector<int> m_plcType;					//PLC信号类型 0：高低电平，1：上升沿，-1：下降沿
 	bool m_isLoadOk;						//加载是否完成
 
 	/************************************************

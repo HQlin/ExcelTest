@@ -90,6 +90,7 @@ bool CTest0Dlg::LoadPlc(CString fileNameTrans)
 	SetWindowText(L"PLC通信测试软件");
 	m_plc.clear();
 	m_plcCStr.clear();
+	m_plcType.clear();
 
 	// Load a workbook with one sheet, display its contents and
 	// save into another file.	
@@ -107,31 +108,108 @@ bool CTest0Dlg::LoadPlc(CString fileNameTrans)
 		//列数
 		size_t maxCols = sheet1->GetTotalCols();
 
-		for (size_t c=1; c<maxCols; ++c)
+		//for (size_t c=1; c<maxCols; ++c)
+		//{
+		//	for (size_t r=0; r<maxRows; ++r)
+		//	{
+		//		BasicExcelCell* cell = sheet1->Cell(r,c);
+		//		switch (cell->Type())
+		//		{
+		//		case BasicExcelCell::UNDEFINED:
+		//			printf(" ");
+		//			break;
+		//		case BasicExcelCell::INT:
+		//			printf("%10d", cell->GetInteger());
+		//			break;
+		//		case BasicExcelCell::DOUBLE:
+		//			printf("%10.6lf", cell->GetDouble());
+		//			break;
+		//		case BasicExcelCell::STRING:
+		//			//PLC位号
+		//			m_plc.push_back(cell->GetString());
+		//			break;
+		//		case BasicExcelCell::WSTRING:
+		//			//PLC位号功能
+		//			m_plcCStr.push_back(cell->GetWString());
+		//			break;
+		//		}
+		//	}
+		//}
+		//PLC位号
+		for (size_t r=0; r<maxRows; ++r)
 		{
-			for (size_t r=0; r<maxRows; ++r)
+			BasicExcelCell* cell = sheet1->Cell(r,1);
+			switch (cell->Type())
 			{
-				BasicExcelCell* cell = sheet1->Cell(r,c);
-				switch (cell->Type())
-				{
-				case BasicExcelCell::UNDEFINED:
-					printf(" ");
-					break;
-				case BasicExcelCell::INT:
-					printf("%10d", cell->GetInteger());
-					break;
-				case BasicExcelCell::DOUBLE:
-					printf("%10.6lf", cell->GetDouble());
-					break;
-				case BasicExcelCell::STRING:
-					//PLC位号
-					m_plc.push_back(cell->GetString());
-					break;
-				case BasicExcelCell::WSTRING:
-					//PLC位号功能
-					m_plcCStr.push_back(cell->GetWString());
-					break;
-				}
+			case BasicExcelCell::UNDEFINED:
+				printf(" ");
+				break;
+			case BasicExcelCell::INT:
+				printf("%10d", cell->GetInteger());
+				break;
+			case BasicExcelCell::DOUBLE:
+				printf("%10.6lf", cell->GetDouble());
+				break;
+			case BasicExcelCell::STRING:
+				//PLC位号
+				m_plc.push_back(cell->GetString());
+				break;
+			case BasicExcelCell::WSTRING:
+				//PLC位号功能
+				m_plcCStr.push_back(cell->GetWString());
+				break;
+			}
+		}
+		//PLC位号功能
+		for (size_t r=0; r<maxRows; ++r)
+		{
+			BasicExcelCell* cell = sheet1->Cell(r,2);
+			switch (cell->Type())
+			{
+			case BasicExcelCell::UNDEFINED:
+				printf(" ");
+				break;
+			case BasicExcelCell::INT:
+				printf("%10d", cell->GetInteger());
+				break;
+			case BasicExcelCell::DOUBLE:
+				printf("%10.6lf", cell->GetDouble());
+				break;
+			case BasicExcelCell::STRING:
+				//PLC位号
+				m_plc.push_back(cell->GetString());
+				break;
+			case BasicExcelCell::WSTRING:
+				//PLC位号功能
+				m_plcCStr.push_back(cell->GetWString());
+				break;
+			}
+		}
+		//PLC信号类型 0：高低电平，1：上升沿，-1：下降沿, 100:长按为1
+		for (size_t r=0; r<maxRows; ++r)
+		{
+			BasicExcelCell* cell = sheet1->Cell(r,3);
+			switch (cell->Type())
+			{
+			case BasicExcelCell::UNDEFINED:
+				printf(" ");
+				break;
+			case BasicExcelCell::INT:
+				//PLC信号类型
+				m_plcType.push_back(cell->GetInteger());
+				break;
+			case BasicExcelCell::DOUBLE:
+				//PLC信号类型
+				m_plcType.push_back(cell->GetDouble());
+				break;
+			case BasicExcelCell::STRING:
+				//PLC位号
+				m_plc.push_back(cell->GetString());
+				break;
+			case BasicExcelCell::WSTRING:
+				//PLC位号功能
+				m_plcCStr.push_back(cell->GetWString());
+				break;
 			}
 		}
 	}
@@ -151,30 +229,48 @@ bool CTest0Dlg::LoadPlc(CString fileNameTrans)
 		int iBtnNum = m_plc.size(), iMax = 0;
 		m_pBtns = new CButtonST[iBtnNum];
 		CString strBtnText = _T("");
-		for (int i = 0 ; i < iBtnNum ; i = i + 3)
+		int h = 20;
+		for (int i = 0 ; i < iBtnNum ; i = i + 5)
 		{
 			CString s0(m_plc[i]);
-			strBtnText.Format(L"(%s)%s", s0, m_plcCStr[i]);
-			m_pBtns[i].Create(strBtnText, WS_VISIBLE|WS_CHILD, CRect(25, 50 + 30*i, 225, 130 + 30*i), this, 3000 + i);
+			strBtnText.Format(L"(%s)%s[%d]", s0, m_plcCStr[i], m_plcType[i]);
+			m_pBtns[i].Create(strBtnText, WS_VISIBLE|WS_CHILD, CRect(25, 50 + h*i, 125, 130 + h*i), this, 3000 + i);
 			m_pBtns[i].ShowWindow(SW_SHOW);
 
 			if(i+1 < iBtnNum)
 			{
 				CString s1(m_plc[i+1]);
-				strBtnText.Format(L"(%s)%s", s1, m_plcCStr[i+1]);
-				m_pBtns[i+1].Create(strBtnText, WS_VISIBLE|WS_CHILD, CRect(250, 50 + 30*i, 475, 130 + 30*i), this, 3000 + i+1);
+				strBtnText.Format(L"(%s)%s[%d]", s1, m_plcCStr[i+1], m_plcType[i+1]);
+				m_pBtns[i+1].Create(strBtnText, WS_VISIBLE|WS_CHILD, CRect(150, 50 + h*i, 250, 130 + h*i), this, 3000 + i+1);
 				m_pBtns[i+1].ShowWindow(SW_SHOW);
 			}
 
 			if(i+2 < iBtnNum)
 			{
 				CString s2(m_plc[i+2]);
-				strBtnText.Format(L"(%s)%s", s2, m_plcCStr[i+2]);
-				m_pBtns[i+2].Create(strBtnText, WS_VISIBLE|WS_CHILD, CRect(500, 50 + 30*i, 725, 130 + 30*i), this, 3000 + i+2);
+				strBtnText.Format(L"(%s)%s[%d]", s2, m_plcCStr[i+2], m_plcType[i+2]);
+				m_pBtns[i+2].Create(strBtnText, WS_VISIBLE|WS_CHILD, CRect(275, 50 + h*i, 375, 130 + h*i), this, 3000 + i+2);
 				m_pBtns[i+2].ShowWindow(SW_SHOW);
 			}
+
+			if(i+3 < iBtnNum)
+			{
+				CString s3(m_plc[i+3]);
+				strBtnText.Format(L"(%s)%s[%d]", s3, m_plcCStr[i+3], m_plcType[i+3]);
+				m_pBtns[i+3].Create(strBtnText, WS_VISIBLE|WS_CHILD, CRect(400, 50 + h*i, 500, 130 + h*i), this, 3000 + i+3);
+				m_pBtns[i+3].ShowWindow(SW_SHOW);
+			}
+
+			if(i+4 < iBtnNum)
+			{
+				CString s4(m_plc[i+4]);
+				strBtnText.Format(L"(%s)%s[%d]", s4, m_plcCStr[i+4], m_plcType[i+4]);
+				m_pBtns[i+4].Create(strBtnText, WS_VISIBLE|WS_CHILD, CRect(525, 50 + h*i, 625, 130 + h*i), this, 3000 + i+4);
+				m_pBtns[i+4].ShowWindow(SW_SHOW);
+			}
+
 			//滑动窗口高度
-			iMax = 230 + 30*i;
+			iMax = 230 + h*i;
 		}
 
 		SCROLLINFO info;
@@ -305,24 +401,33 @@ BOOL CTest0Dlg::OnMouseWheel(UINT nFlags, short zDelta, CPoint pt)
 BOOL CTest0Dlg::PreTranslateMessage(MSG* pMsg)
 {
 	// 按钮按下
-	//if(pMsg->message == WM_LBUTTONDOWN)
-	//{
-	//	for (int i = 0 ; i < m_plc.size() ; i ++)
-	//	{
-	//		if(pMsg->hwnd == GetDlgItem(3000 + i)->m_hWnd)
-	//		{				
-	//			CString s(m_plc[i]);				
-	//			if (0 <= s.Find(L"D"))
-	//			{
-
-	//			}
-	//			else
-	//			{
-	//						
-	//			}
-	//		}
-	//	}
-	//}
+	if(pMsg->message == WM_LBUTTONDOWN)
+	{
+		for (int i = 0 ; i < m_plc.size() ; i ++)
+		{
+			if(pMsg->hwnd == GetDlgItem(3000 + i)->m_hWnd)
+			{				
+				CString s(m_plc[i]);				
+				if (0 > s.Find(L"D"))
+				{
+					//PLC信号类型 0：高低电平，1：上升沿，-1：下降沿, 100:长按为1
+					switch(m_plcType[i])
+					{
+					case 0:
+						break;
+					case 1:
+						break;
+					case -1:
+						break;
+					case 100:
+						g_plc.Write(s);
+						TurnOn(&m_pBtns[i]);
+						break;
+					}		
+				}
+			}
+		}
+	}
 	//else 
 	// 按钮抬起
 	if(pMsg->message == WM_LBUTTONUP)
@@ -335,6 +440,7 @@ BOOL CTest0Dlg::PreTranslateMessage(MSG* pMsg)
 			{			
 				short value;
 				CString s(m_plc[i]);
+				//D位号
 				if (0 <= s.Find(L"D"))
 				{
 					UpdateData();
@@ -342,13 +448,42 @@ BOOL CTest0Dlg::PreTranslateMessage(MSG* pMsg)
 				}
 				else
 				{
-					g_plc.ReadBatchData1(s,1,&value);
-					if(value)
+					//PLC信号类型 0：高低电平，1：上升沿，-1：下降沿, 100:长按为1
+					switch(m_plcType[i])
+					{
+					case 0:
+						g_plc.ReadBatchData1(s,1,&value);
+						if(value)
+							g_plc.nWrite(s);
+						else
+							g_plc.Write(s);
+						UpdatePlc(i);
+						break;
+					case 1:
 						g_plc.nWrite(s);
-					else
-						g_plc.Write(s);		
-				}
-				UpdatePlc(i);
+						g_plc.Write(s);
+						COLORREF crpColor;
+						m_pBtns[i].GetColor(CButtonST::BTNST_COLOR_BK_IN, &crpColor);
+						if(RGB(181,230,29) == crpColor)
+							TurnOff(&m_pBtns[i]);
+						else
+							TurnOn(&m_pBtns[i]);
+						break;
+					case -1:
+						g_plc.Write(s);
+						g_plc.nWrite(s);
+						m_pBtns[i].GetColor(CButtonST::BTNST_COLOR_BK_IN, &crpColor);
+						if(RGB(181,230,29) == crpColor)
+							TurnOff(&m_pBtns[i]);
+						else
+							TurnOn(&m_pBtns[i]);
+						break;
+					case 100:
+						g_plc.nWrite(s);
+						TurnOff(&m_pBtns[i]);
+						break;
+					}							
+				}				
 			}
 		}
 	}
